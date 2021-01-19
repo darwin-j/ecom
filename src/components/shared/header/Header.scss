@@ -1,0 +1,42 @@
+.header {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    &__search {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        &--input {
+            height: 1rem;
+            padding: 1rem;
+            border: none;
+            width: 100%;
+        }
+        &--icon {
+            padding: 0.5rem;
+            height: 3rem !important;
+            width: 3rem !important;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-evenly;
+        &--option {
+            display: flex;
+            flex-direction: column;
+            margin: 0 1rem;
+            &-cart {
+                display: flex;
+                &-number {
+                    margin: 0 1rem;
+                }
+                &-icon {
+                }
+            }
+        }
+    }
+}
