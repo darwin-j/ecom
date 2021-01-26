@@ -4,9 +4,17 @@ import { useStateValue } from "./../../../state providers/context api/StateProvi
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./Header.scss";
+import { auth } from "./../../../firebase";
 
 export default function Header() {
-  const state = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const signOut = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+
   return (
     <div className="header">
       <Link to="/">
@@ -17,14 +25,18 @@ export default function Header() {
         <SearchIcon className="header__search--icon" />
       </div>
       <div className="header__nav">
-        <div className="header__nav--option">signIn</div>
+        <Link to={user ? "" : "/login"}>
+          <div onClick={signOut} className="header__nav--option">
+            {user ? "signOut" : "signIn"}
+          </div>
+        </Link>
         <div className="header__nav--option">orders</div>
         <Link to="/checkout">
           <div className="header__nav--option-cart">
             <ShoppingCartIcon className="header__nav--option-cart-icon" />
 
             <span className="header__nav--option-cart-number">
-              {state[0].basket?.length}
+              {basket?.length}
             </span>
           </div>
         </Link>
