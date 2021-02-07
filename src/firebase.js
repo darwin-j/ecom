@@ -3,12 +3,12 @@ import "firebase/auth";
 import "firebase/database";
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyD1jibTlY9FRY_6DEQxGYlkagkqA7RmvVA",
-  authDomain: "ecommerce-app-e6972.firebaseapp.com",
-  projectId: "ecommerce-app-e6972",
-  storageBucket: "ecommerce-app-e6972.appspot.com",
-  messagingSenderId: "279469611852",
-  appId: "1:279469611852:web:ee5cabbe4ab9aab70e0de9",
+  apiKey: //your data,
+  authDomain: //your data,
+  projectId: //your data,
+  storageBucket: //your data,
+  messagingSenderId: //your data,
+  appId: //your data,
 });
 
 export const auth = app.auth();
